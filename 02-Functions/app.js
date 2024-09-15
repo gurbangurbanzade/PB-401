@@ -347,7 +347,7 @@ result = students.every((element) => element.avgPoint > 75);
 
 result = students.some((element) => element.avgPoint > 75);
 
-console.log(result, "result");
+// console.log(result, "result");
 
 let arr1 = [
   "a",
@@ -381,7 +381,7 @@ const myMonths = months.with(2, "March");
 // console.log(result);
 
 let arr3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-console.log(arr3, "arr3 first time");
+// console.log(arr3, "arr3 first time");
 
 // let arr4 = JSON.parse(JSON.stringify(arr3));
 
@@ -389,8 +389,8 @@ let arr4 = structuredClone(arr3);
 
 arr4[0] = 100;
 
-console.log(arr3, "arr3");
-console.log(arr4, "arr4");
+// console.log(arr3, "arr3");
+// console.log(arr4, "arr4");
 
 let arr5 = [
   "gurban",
@@ -413,6 +413,33 @@ let arr5 = [
 
 const [qurban, hajar, ...teachers] = arr5;
 
-console.log(qurban);
-console.log(hajar);
-console.log(teachers);
+// console.log(qurban);
+// console.log(hajar);
+// console.log(teachers);
+
+// const array = [1, 2, 3, 4, 5];
+
+// let newArray = [].map((element) => {
+//   return { id: element, name: "gurban" };
+// });
+
+// console.log(array, "array");
+// console.log(newArray, "newArray");
+
+// Ən çox hobbisi olan tələbənin ad və hobbilərini çapa verin
+console.log(students, "students");
+
+// result = students.sort((a, b) => a.hobbies.length - b.hobbies.length).pop();
+
+result = students.reduce((maxAvg, element) => {
+  if (element.avgPoint > maxAvg) {
+    maxAvg = element.avgPoint;
+  }
+  return maxAvg;
+}, students[0].avgPoint);
+
+result = students.find((elem) => elem.avgPoint == result);
+
+result = { name: result.name, surname: result.surname };
+
+console.log(result, "result");
